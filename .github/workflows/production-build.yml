@@ -18,9 +18,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Yarn install and build
+      - name: Yarn install
         run: |
           yarn install
+      - name: Production build
+        run: |
           yarn build
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
