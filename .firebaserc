@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "quality-dashboard-produc-d32a1"
-  }
+    "default": "quality-dashboard-produc-d32a1",
+    "qa": "quality-dashboard-qa"
+  },
+  "targets": {}
 }

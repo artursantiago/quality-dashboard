@@ -1,8 +1,8 @@
-name: Production Build
+name: QA Build
 on:
   push:
     branches:
-      - master
+      - qa
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -13,14 +13,19 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Yarn install and build
+      - name: Yarn install
         run: |
           yarn install
+      - name: Run tests
+        run: |
+          CI=true yarn test
+      - name: QA build
+        run: |
           yarn build
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
@@ -28,13 +33,13 @@ jobs:
           name: build
           path: build
           retention-days: 1
-    
+
       - name: Deploy to firebase hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: >-
-            ${{ secrets.FIREBASE_SERVICE_ACCOUNT_QUALITY_DASHBOARD_PRODUC_D32A1
+            ${{ secrets.FIREBASE_SERVICE_ACCOUNT_QUALITY_DASHBOARD_QA
             }}
           channelId: live
-          projectId: quality-dashboard-produc-d32a1
+          projectId: quality-dashboard-qa
