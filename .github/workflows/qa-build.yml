@@ -27,13 +27,12 @@ jobs:
       - name: QA build
         run: |
           yarn build
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v2
-        with: 
-          name: build
-          path: build
-          retention-days: 1
-
+      # - name: Upload build artifact
+      #   uses: actions/upload-artifact@v2
+      #   with: 
+      #     name: build
+      #     path: build
+      #     retention-days: 1
       - name: Deploy to firebase hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
