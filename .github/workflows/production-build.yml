@@ -21,24 +21,24 @@ jobs:
           path: build
           retention-days: 1
     
-    deploy_to_production:
-      if: github.ref == 'refs/heads/master'
-      needs: test_and_build
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v2
-        - name: Download build artifact
-          uses: actions/download-artifact@v2
-          with:
-            name: build
-            path: build
-        - name: Deploy to firebase hosting
-          uses: FirebaseExtended/action-hosting-deploy@v0
-          with:
-            repoToken: '${{ secrets.GITHUB_TOKEN }}'
-            firebaseServiceAccount: >-
-              ${{ secrets.FIREBASE_SERVICE_ACCOUNT_QUALITY_DASHBOARD_PRODUC_D32A1
-              }}
-            channelId: live
-            projectId: quality-dashboard-produc-d32a1
+  deploy_to_production:
+    if: github.ref == 'refs/heads/master'
+    needs: test_and_build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Download build artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: build
+      - name: Deploy to firebase hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: >-
+            ${{ secrets.FIREBASE_SERVICE_ACCOUNT_QUALITY_DASHBOARD_PRODUC_D32A1
+            }}
+          channelId: live
+          projectId: quality-dashboard-produc-d32a1
