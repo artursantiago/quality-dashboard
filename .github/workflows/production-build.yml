@@ -4,7 +4,7 @@ on:
     branches:
       - master
 jobs:
-  test_and_build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -24,18 +24,6 @@ jobs:
           path: build
           retention-days: 1
     
-  deploy:
-    if: github.ref == 'refs/heads/master'
-    needs: test_and_build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Download build artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: build
-          path: build
       - name: Deploy to firebase hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:

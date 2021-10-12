@@ -1,0 +1,45 @@
+name: Production Build
+on:
+  push:
+    branches:
+      - qa
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - name: Checkout repository
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Yarn install
+      run: |
+        yarn install
+    - name: Run tests
+      run: |
+        CI=true yarn test
+    - name: QA build
+      run: |
+        yarn build
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v2
+      with: 
+        name: build
+        path: build
+        retention-days: 1
+
+    - name: Deploy to firebase hosting
+      uses: FirebaseExtended/action-hosting-deploy@v0
+      with:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        firebaseServiceAccount: >-
+          ${{ secrets.FIREBASE_SERVICE_ACCOUNT_QUALITY_DASHBOARD_QA
+          }}
+        channelId: live
+        projectId: quality-dashboard-qa
