@@ -13,10 +13,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Yarn install, test and build
+      - name: Yarn install and build
         run: |
           yarn install
-          yarn test
           yarn build
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
