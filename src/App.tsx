@@ -1,4 +1,7 @@
-import { MenuItem, Navigation } from 'components';
+import { Navigation } from 'components';
+
+import { ThemeProvider } from '@material-ui/styles';
+import { lightTheme } from 'styles/muiTheme';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -6,10 +9,9 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 const App = (): JSX.Element => (
-  <div>
+  <ThemeProvider theme={lightTheme}>
     <Navigation />
-    <MenuItem />
-  </div>
+  </ThemeProvider>
 );
 
 export default App;
