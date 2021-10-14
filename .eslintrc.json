@@ -41,7 +41,11 @@
         "react/react-in-jsx-scope": "off",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
-        "import/prefer-default-export": "off"
+        "import/prefer-default-export": "off",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "react/no-unused-prop-types": "off",
+        "react/jsx-no-bind": "off",
+        "react/require-default-props": "off"
     },
     "settings": {
         "import/resolver": {
