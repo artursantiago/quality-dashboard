@@ -1,8 +1,8 @@
-import { render } from "@testing-library/react";
-import App from "./App";
+import { render } from '@testing-library/react';
+import App from './App';
 
-test("renders app", () => {
-  const {container} = render(<App />);
+test('renders app', () => {
+  const { container } = render(<App />);
 
   expect(container.firstChild).toBeInTheDocument();
 });
