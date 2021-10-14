@@ -30,3 +30,12 @@ declare namespace PageLayoutContainer {
     children: React.ReactNode
   }
 }
+
+declare namespace InfoCard {
+  type Props = {
+    color: string
+    labelPrimary: string
+    labelSecondary?: string
+    icon: import('@material-ui/icons').SvgIconComponent
+  }
+}
