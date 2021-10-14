@@ -32,7 +32,7 @@ type Props = {
   small?: boolean
   path: string
   primaryText: string
-  onClick: () => void
+  onClick?: () => void
 }
 
 export const MenuItem = ({
