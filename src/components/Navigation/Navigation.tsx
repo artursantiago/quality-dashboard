@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import {
   Drawer, IconButton, Link, List, Theme, useMediaQuery, useTheme,
 } from '@material-ui/core';
@@ -40,20 +40,32 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-export const Navigation = (): JSX.Element => {
+type Props = {
+  open: boolean
+  isCollapsed: boolean
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setIsCollapsed: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export const Navigation = ({
+  open, setOpen, isCollapsed, setIsCollapsed,
+}: Props): JSX.Element => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSmallSize = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const [open, setOpen] = useState(true);
-
-  function toggleNavigation() {
-    setOpen((prevState) => !prevState);
-  }
-
-  function closeNavigation() {
+  useEffect(() => {
     if (matchesSmallSize) {
       setOpen(false);
+      setIsCollapsed(false);
+    }
+  }, [matchesSmallSize, setIsCollapsed, setOpen]);
+
+  function toggleNavigation() {
+    if (matchesSmallSize) {
+      setOpen((prevState) => !prevState);
+    } else {
+      setIsCollapsed((prevState) => !prevState);
     }
   }
 
@@ -63,36 +75,38 @@ export const Navigation = (): JSX.Element => {
         classes={{
           paper: clsx(
             classes.navigationDrawer,
-            !open && classes.navigationDrawerCollapse,
+            isCollapsed && classes.navigationDrawerCollapse,
           ),
         }}
         variant={matchesSmallSize ? 'temporary' : 'permanent'}
+        open={open}
+        onClose={toggleNavigation}
       >
         <div
           className={clsx(
             classes.navigationToolbar,
-            !open && classes.navigationToolbarCollapse,
+            isCollapsed && classes.navigationToolbarCollapse,
           )}
         >
           <IconButton onClick={toggleNavigation}>
-            {open ? <ChevronLeft /> : <Menu />}
+            {!isCollapsed ? <ChevronLeft /> : <Menu />}
           </IconButton>
         </div>
 
         <div className={classes.navigationLogoContainer}>
           <Link href="/">
-            <img className={classes.navigationLogo} src={open ? logo : logoSmall} alt="Quality Logo" />
+            <img className={classes.navigationLogo} src={!isCollapsed ? logo : logoSmall} alt="Quality Logo" />
           </Link>
         </div>
 
         <List component="nav">
-          <MenuItem small={!open} onClick={closeNavigation} icon={Assessment} path="/dashboard" primaryText="Dashboard" />
-          <MenuItem small={!open} onClick={closeNavigation} icon={PeopleAlt} path="/user" primaryText="User" />
-          <MenuItem small={!open} onClick={closeNavigation} icon={Storefront} path="/product" primaryText="Product" />
-          <MenuItem small={!open} onClick={closeNavigation} icon={Description} path="/blog" primaryText="Blog" />
-          <MenuItem small={!open} onClick={closeNavigation} icon={NewReleases} path="/" primaryText="Lorem Ipsum" />
-          <MenuItem small={!open} onClick={closeNavigation} icon={NewReleases} path="/" primaryText="Lorem Ipsum" />
-          <MenuItem small={!open} onClick={closeNavigation} icon={NewReleases} path="/" primaryText="Lorem Ipsum" />
+          <MenuItem small={isCollapsed} icon={Assessment} path="/dashboard" primaryText="Dashboard" />
+          <MenuItem small={isCollapsed} icon={PeopleAlt} path="/user" primaryText="User" />
+          <MenuItem small={isCollapsed} icon={Storefront} path="/product" primaryText="Product" />
+          <MenuItem small={isCollapsed} icon={Description} path="/blog" primaryText="Blog" />
+          <MenuItem small={isCollapsed} icon={NewReleases} path="/" primaryText="Lorem Ipsum" />
+          <MenuItem small={isCollapsed} icon={NewReleases} path="/" primaryText="Lorem Ipsum" />
+          <MenuItem small={isCollapsed} icon={NewReleases} path="/" primaryText="Lorem Ipsum" />
         </List>
       </Drawer>
     </div>
