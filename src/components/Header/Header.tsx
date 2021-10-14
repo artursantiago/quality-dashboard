@@ -33,14 +33,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-type Props = {
-  setIsNavigationOpen: React.Dispatch<React.SetStateAction<boolean>>
-  isNavigationCollapsed: boolean
-}
-
 export const Header = ({
   setIsNavigationOpen, isNavigationCollapsed,
-}: Props): JSX.Element => {
+}: Header.Props): JSX.Element => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSmallSize = useMediaQuery(theme.breakpoints.down('sm'));

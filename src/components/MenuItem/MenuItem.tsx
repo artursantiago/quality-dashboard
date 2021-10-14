@@ -1,5 +1,4 @@
 import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import { SvgIconComponent } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/styles';
 import clsx from 'clsx';
 
@@ -27,21 +26,13 @@ const useStyles = makeStyles({
   },
 });
 
-type Props = {
-  icon: SvgIconComponent
-  small?: boolean
-  path: string
-  primaryText: string
-  onClick?: () => void
-}
-
 export const MenuItem = ({
   icon: Icon,
   small,
   path,
   primaryText,
   onClick,
-}: Props): JSX.Element => {
+}: MenuItem.Props): JSX.Element => {
   const classes = useStyles();
   const isActive = path === '/dashboard';
 
