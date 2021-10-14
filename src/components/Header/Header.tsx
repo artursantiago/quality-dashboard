@@ -14,6 +14,7 @@ import { avatar } from 'assets/icons';
 
 const useStyles = makeStyles((theme: Theme) => ({
   headerContainer: {
+    zIndex: 1,
     position: 'fixed',
     width: 'calc(100% - 280px)',
     right: 0,

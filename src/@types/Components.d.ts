@@ -23,3 +23,10 @@ declare namespace Header {
     isNavigationCollapsed: boolean
   }
 }
+
+declare namespace PageLayoutContainer {
+  type Props = {
+    isNavigationCollapsed: boolean
+    children: React.ReactNode
+  }
+}
