@@ -1,5 +1,7 @@
 import { Grid, makeStyles, Typography } from '@material-ui/core';
-import { Android } from '@material-ui/icons';
+import {
+  Android, Apple, BugReport, LaptopWindows,
+} from '@material-ui/icons';
 import { InfoCard } from 'components';
 
 const useStyles = makeStyles((theme) => ({
@@ -41,7 +43,7 @@ export const Dashboard = (): JSX.Element => {
         </Grid>
         <Grid item xs>
           <InfoCard
-            icon={Android}
+            icon={Apple}
             color="#D0F2FF"
             labelPrimary="724k"
             labelSecondary="Weekly Sales"
@@ -49,7 +51,7 @@ export const Dashboard = (): JSX.Element => {
         </Grid>
         <Grid item xs>
           <InfoCard
-            icon={Android}
+            icon={LaptopWindows}
             color="#FFF7CD"
             labelPrimary="724k"
             labelSecondary="Weekly Sales"
@@ -57,7 +59,7 @@ export const Dashboard = (): JSX.Element => {
         </Grid>
         <Grid item xs>
           <InfoCard
-            icon={Android}
+            icon={BugReport}
             color="#FFE7D9"
             labelPrimary="724k"
             labelSecondary="Weekly Sales"
