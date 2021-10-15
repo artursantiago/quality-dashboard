@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingInline: theme.spacing(7),
     transition: 'width 0.2s ease',
     minHeight: '100vh',
+    height: '100%',
     overflowX: 'hidden',
     overflowY: 'auto',
   },
@@ -27,6 +28,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   contentContainer: {
     maxWidth: theme.breakpoints.values.xl,
     margin: '0 auto',
+    height: '100%',
   },
 }));
 
