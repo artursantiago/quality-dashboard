@@ -1,6 +1,11 @@
 import {
-  alpha, darken,
-  Box, Card, makeStyles, Theme, Typography,
+  alpha,
+  darken,
+  makeStyles,
+  Theme,
+  Typography,
+  Card,
+  Box,
 } from '@material-ui/core';
 
 const useStyles = (cardColor: string) => (makeStyles((theme: Theme) => ({
@@ -39,10 +44,10 @@ const useStyles = (cardColor: string) => (makeStyles((theme: Theme) => ({
   },
 })))();
 
-export const InfoCard = ({
+export const MetricCard = ({
   icon: Icon, color, labelPrimary, labelSecondary,
-}: InfoCard.Props): JSX.Element => {
-  const classes = useStyles(color);
+}: MetricCard.Props): JSX.Element => {
+  const classes = useStyles(color || '');
 
   return (
     <Card

@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: 'calc(100% - 280px)',
     paddingTop: `calc(104px + ${theme.spacing(2)}px)`, // Header space + real padding
     paddingBottom: theme.spacing(2),
-    paddingInline: theme.spacing(7),
+    paddingLeft: theme.spacing(5),
+    paddingRight: theme.spacing(5),
     transition: 'width 0.2s ease',
     minHeight: '100vh',
     height: '100%',

@@ -3,7 +3,7 @@ import {
   Android, Apple, BugReport, LaptopWindows,
 } from '@material-ui/icons';
 
-import { InfoCard } from 'components';
+import { MetricCard } from 'components';
 
 export const MetricCards = (): JSX.Element => (
   <Grid
@@ -12,7 +12,7 @@ export const MetricCards = (): JSX.Element => (
     spacing={6}
   >
     <Grid item xs>
-      <InfoCard
+      <MetricCard
         icon={Android}
         color="#C8FACD"
         labelPrimary="724k"
@@ -20,7 +20,7 @@ export const MetricCards = (): JSX.Element => (
       />
     </Grid>
     <Grid item xs>
-      <InfoCard
+      <MetricCard
         icon={Apple}
         color="#D0F2FF"
         labelPrimary="724k"
@@ -28,7 +28,7 @@ export const MetricCards = (): JSX.Element => (
       />
     </Grid>
     <Grid item xs>
-      <InfoCard
+      <MetricCard
         icon={LaptopWindows}
         color="#FFF7CD"
         labelPrimary="724k"
@@ -36,7 +36,7 @@ export const MetricCards = (): JSX.Element => (
       />
     </Grid>
     <Grid item xs>
-      <InfoCard
+      <MetricCard
         icon={BugReport}
         color="#FFE7D9"
         labelPrimary="724k"

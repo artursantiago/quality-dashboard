@@ -31,11 +31,39 @@ declare namespace PageLayoutContainer {
   }
 }
 
-declare namespace InfoCard {
+declare namespace NewsItem {
+  type News = {
+      id: string;
+      title: string;
+      description: string;
+      image: string;
+      postedAt: Date;
+  }
+
   type Props = {
-    color: string
+    news: News
+  }
+}
+
+declare namespace MetricCard {
+  type Props = {
+    color: React.CSSProperties['color']
     labelPrimary: string
     labelSecondary?: string
     icon: import('@material-ui/icons').SvgIconComponent
+  }
+}
+
+declare namespace OrderTimelineItem {
+  type Timeline = {
+    id: string,
+    title: string,
+    time: Date,
+    type: 'order1' | 'order2' | 'order3' | 'order4' | 'order5'
+  }
+
+  type Props = {
+    timeline: Timeline
+    isLast?: boolean
   }
 }
