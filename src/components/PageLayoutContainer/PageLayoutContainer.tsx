@@ -7,17 +7,29 @@ import clsx from 'clsx';
 const useStyles = makeStyles((theme: Theme) => ({
   rootContainer: {
     position: 'fixed',
-    width: 'calc(100% - 280px)',
     right: 0,
-    top: 104,
-    padding: theme.spacing(3),
+    top: 0,
+    width: 'calc(100% - 280px)',
+    paddingTop: `calc(104px + ${theme.spacing(2)}px)`, // Header space + real padding
+    paddingBottom: theme.spacing(2),
+    paddingLeft: theme.spacing(5),
+    paddingRight: theme.spacing(5),
     transition: 'width 0.2s ease',
+    minHeight: '100vh',
+    height: '100%',
+    overflowX: 'hidden',
+    overflowY: 'auto',
   },
   rootContainerExtended: {
     width: `calc(100% - ${theme.spacing(9)}px)`,
     [theme.breakpoints.down('sm')]: {
       width: '100%',
     },
+  },
+  contentContainer: {
+    maxWidth: theme.breakpoints.values.xl,
+    margin: '0 auto',
+    height: '100%',
   },
 }));
 
@@ -35,7 +47,9 @@ export const PageLayoutContainer = ({
       className={clsx(classes.rootContainer,
         (matchesSmallSize || isNavigationCollapsed) && classes.rootContainerExtended)}
     >
-      {children}
+      <Grid container className={classes.contentContainer}>
+        {children}
+      </Grid>
     </Grid>
   );
 };

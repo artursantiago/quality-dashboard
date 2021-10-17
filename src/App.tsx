@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { ThemeProvider } from '@material-ui/styles';
 
-import { Header, Navigation } from 'components';
-import { lightTheme } from 'styles/muiTheme';
+import { Header, Navigation, PageLayoutContainer } from 'components';
+import { Dashboard } from 'pages';
+
+import { ThemeConfig } from 'theme';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -14,7 +15,7 @@ const App = (): JSX.Element => {
   const [isNavigationCollapsed, setIsNavigationCollapsed] = useState(false);
 
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeConfig>
       <Navigation
         open={isNavigationOpen}
         setOpen={setIsNavigationOpen}
@@ -25,7 +26,12 @@ const App = (): JSX.Element => {
         setIsNavigationOpen={setIsNavigationOpen}
         isNavigationCollapsed={isNavigationCollapsed}
       />
-    </ThemeProvider>
+      <PageLayoutContainer
+        isNavigationCollapsed={isNavigationCollapsed}
+      >
+        <Dashboard />
+      </PageLayoutContainer>
+    </ThemeConfig>
   );
 };
 

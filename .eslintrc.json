@@ -45,7 +45,8 @@
         "@typescript-eslint/no-unused-vars": "warn",
         "react/no-unused-prop-types": "off",
         "react/jsx-no-bind": "off",
-        "react/require-default-props": "off"
+        "react/require-default-props": "off",
+        "react/jsx-props-no-spreading": "off"
     },
     "settings": {
         "import/resolver": {

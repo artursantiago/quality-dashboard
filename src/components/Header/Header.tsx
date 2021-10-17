@@ -19,8 +19,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: 'calc(100% - 280px)',
     right: 0,
     top: 0,
-    padding: theme.spacing(3),
+    paddingBlock: theme.spacing(3),
+    paddingInline: theme.spacing(5),
     transition: 'width 0.2s ease',
+    backdropFilter: 'blur(6px)',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
   headerComponentExtended: {
     width: `calc(100% - ${theme.spacing(9)}px)`,

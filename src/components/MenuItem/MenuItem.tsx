@@ -49,12 +49,10 @@ export const MenuItem = ({
       <ListItemIcon className={clsx(classes.icon, isActive && classes.iconActive)}>
         <Icon />
       </ListItemIcon>
-      {/* {!small && ( */}
       <ListItemText
         primary={!small && primaryText}
         primaryTypographyProps={{ variant: 'body2', className: clsx(classes.primaryText, isActive && classes.primaryTextActive) }}
       />
-      {/* )} */}
     </ListItem>
   );
 };
