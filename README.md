@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <img alt="Quality Dashboard" title="Quality Dashboard" src="public/logo512.png" width="90px" />
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+<p align="center">
+  <a href="https://quality-dashboard-produc-d32a1.web.app/" target="_blank">Live</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-techs">Techs</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-getting-started">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-license">License</a>
+</p>
 
-## Available Scripts
+<p align="center">
+ <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=49AA26&labelColor=000000" alt="PRs welcome!" />
 
-In the project directory, you can run:
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+</p>
 
-### `yarn start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- <p align="center">
+  <img alt="Quality Dashboard screenshot" src="public/img/cover.png" width="100%">
+</p> -->
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 💻 Project
 
-### `yarn test`
+A simple project to show my fovorite spots in the world made with Next, GraphQL, GraphCMS and Leaflet.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Techs
 
-### `yarn build`
+This project was developed with the following technologies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React
+- Typescript
+- Material UI
+- Firebase Hosting
+- Githuib Actions
+- Apex Charts
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 👨🏻‍🔧 Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You need to install YARN/NPM and NODE first, then in order to clone the project via SSH, run this command:
 
-### `yarn eject`
+```bash
+git@github.com:artursantiago/quality-dashboard.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Install dependencies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You need to install the dependencies of the project, so run the above command on root and in each of this folders:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install
+# or
+yarn
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+##  🏃‍♂️ Getting Started
 
-## Learn More
+First, run the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run start
+# or
+yarn start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+##  📝 License
+
+This project is under the MIT license. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+<blockquote alt="[ignore]">
+  <p>
+    This project is only for study purposes. The brand, logo and name are non professional.
+  </p>
+</blockquote>
