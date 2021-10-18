@@ -25,7 +25,7 @@
 
 ## 💻 Project
 
-A simple project to show my fovorite spots in the world made with Next, GraphQL, GraphCMS and Leaflet.
+A simple Admin Dashboard made with React, Material-UI components and ApexCharts.
 
 ## 🚀 Techs
 
