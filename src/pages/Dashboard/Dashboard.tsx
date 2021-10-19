@@ -5,6 +5,7 @@ import { CurrentVisits } from './components/CurrentVisits';
 import { MetricCards } from './components/MetricCards';
 import { NewsUpdate } from './components/NewsUpdate/NewsUpdate';
 import { OrderTimeline } from './components/OrderTimeline/OrderTimeline';
+import { TrafficBySite } from './components/TrafficBySite/TrafficBySite';
 import { WebsiteVisits } from './components/WebsiteVisits';
 
 const useStyles = makeStyles(({
@@ -62,6 +63,16 @@ export const Dashboard = (): JSX.Element => {
         </Grid>
 
         <Grid item xs={12} md={6} lg={4}>
+          <OrderTimeline />
+        </Grid>
+      </Grid>
+
+      <Grid item container spacing={3}>
+        <Grid item xs={12} md={6} lg={4}>
+          <TrafficBySite />
+        </Grid>
+
+        <Grid item xs={12} md={6} lg={8}>
           <OrderTimeline />
         </Grid>
       </Grid>

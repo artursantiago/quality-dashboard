@@ -67,3 +67,17 @@ declare namespace OrderTimelineItem {
     isLast?: boolean
   }
 }
+
+declare namespace SiteItem {
+  type Site = {
+    id: string,
+    value: number,
+    name: string
+    color: string
+    icon: import('@material-ui/icons').SvgIconComponent,
+  }
+
+  type Props = {
+    site: Site
+  }
+}

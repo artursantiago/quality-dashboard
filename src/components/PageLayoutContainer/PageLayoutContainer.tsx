@@ -1,10 +1,10 @@
 import {
-  Grid, Theme, useMediaQuery, useTheme,
+  Grid, useMediaQuery, useTheme,
+  makeStyles,
 } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
 import clsx from 'clsx';
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles((theme) => ({
   rootContainer: {
     position: 'fixed',
     right: 0,
