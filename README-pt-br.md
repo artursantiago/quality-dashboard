@@ -42,7 +42,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - Typescript
 - Material UI
 - Firebase Hosting
-- Githuib Actions
+- Github Actions
 - Apex Charts
 
 ## 👨🏻‍🔧 Instalação
