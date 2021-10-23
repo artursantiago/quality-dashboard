@@ -1,3 +1,8 @@
+<p align="center">
+   <a href="https://github.com/artursantiago/quality-dashboard/blob/develop/README-pt-br.md">Português (Brasil)</a>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;
+   <a href="https://github.com/artursantiago/quality-dashboard/blob/develop/README.md">English</a>
+</p>
+
 <h1 align="center">
   <img alt="Quality Dashboard" title="Quality Dashboard" src="public/logo512.png" width="90px" />
 </h1>
@@ -43,12 +48,12 @@ This project was developed with the following technologies:
 You need to install YARN/NPM and NODE first, then in order to clone the project via SSH, run this command:
 
 ```bash
-git@github.com:artursantiago/quality-dashboard.git
+git clone git@github.com:artursantiago/quality-dashboard.git
 ```
 
 Install dependencies
 
-You need to install the dependencies of the project, so run the above command on root and in each of this folders:
+You need to install the dependencies of the project, so run the command bellow on the root directory:
 
 ```bash
 npm install
